@@ -1,9 +1,9 @@
 > [!NOTE] 
 > This is example code to be used for exercises in ["Building Better Software to Support Open and Reproducible Research" session at DH RSE Summer School 2026](https://github.com/DH-RSE-Summer-School/DH-RSE-Summer-School-2026/tree/main/Day%203) (delivered on Day 3).
-
-The software project contains a Python script that uses the NASA data on human space walks (Extravehicular activities - EVAs), exported/downloaded in JSON format, does some analysis over this data, plots a few graphs and saves the data in CSV format. This project is intentionally constructed to illustrate some common mistakes in research software development.
-
-Throughout the session, attendees will learn and apply better research software practices — including elements of FAIR — as they work to improve the software project.
+>
+> The software project contains a Python script that uses the NASA data on human space walks (Extravehicular activities - EVAs), exported/downloaded in JSON format, does some analysis over this data, plots a few graphs and saves the data in CSV format. This project is intentionally > constructed to illustrate some common mistakes in research software development.
+>
+>Throughout the session, attendees will learn and apply better research software practices — including elements of FAIR — as they work to improve the software project.
 
 # Your Project Name
 
