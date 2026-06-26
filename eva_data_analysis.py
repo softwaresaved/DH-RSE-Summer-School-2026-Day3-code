@@ -1,24 +1,24 @@
-import matplotlib.pyplot as plt
 import pandas as pd
-import re
 
+# TODO Naming: 'f' is not descriptive
 # TODO Inputs: this should be a command-line argument, not hardcoded
-f = 'data/eva-data.json'
+f = 'eva_data.json'
+# TODO Naming: 'o' is not descriptive
 # TODO Inputs: this should be a command-line argument, not hardcoded
-o = 'results/eva-data.csv'
+o = 'eva_data.csv'
 
 print("--START--")
 
-print(f'Reading JSON file {f}')
+print(f'Reading JSON data file {f}')
 # TODO Naming: 'd' is not descriptive
 d = pd.read_json(f, convert_dates=['date'], encoding='ascii')
 d['eva'] = d['eva'].astype(float)
 d.dropna(axis=0, subset=['duration', 'date'], inplace=True)
 
-print(f'Saving to CSV file {o}')
+print(f'Saving data to CSV file {o}')
 d.to_csv(o, index=False, encoding='utf-8')
 
-# Descriptive comment
+# TODO Descriptive comment: add an explanation of that the 3 lines below do
 subset = d.loc[:, ['crew', 'duration']]
 subset.crew = subset.crew.str.split(';').apply(lambda x: [i for i in x if i.strip()])
 subset = subset.explode('crew')
@@ -33,7 +33,7 @@ subset['duration_hours'] = hrs
 subset = subset.drop('duration', axis=1)
 subset = subset.groupby('crew').sum()
 
-dur_out = 'results/duration_by_astronaut.csv'
+dur_out = 'duration_by_astronaut.csv'
 print(f'Saving to CSV file {dur_out}')
 subset.to_csv(dur_out, index=False, encoding='utf-8')
 
@@ -48,8 +48,11 @@ d['duration_hours'] = hrs2
 
 d['cumulative_time'] = d['duration_hours'].cumsum()
 
+#TODO: import statements should be grouped at the top
+import matplotlib.pyplot as plt
+
 # TODO Inputs: graph save location should be a flexible command-line argument
-g = 'results/cumulative_eva_graph.png'
+g = 'cumulative_eva_graph.png'
 print(f'Plotting cumulative spacewalk duration and saving to {g}')
 plt.plot(d['date'], d['cumulative_time'], 'ko-')
 plt.xlabel('Year')
@@ -57,6 +60,9 @@ plt.ylabel('Total time spent in space to date (hours)')
 plt.tight_layout()
 plt.savefig(g)
 plt.show()
+
+#TODO: import statements should be grouped at the top
+import re
 
 # TODO: this function is never used anywhere - candidate for removal,
 # or for wiring into the analysis (left as unused/dead code on purpose)
