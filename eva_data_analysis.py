@@ -7,7 +7,7 @@ f = 'eva_data.json'
 # TODO Inputs: this should be a command-line argument, not hardcoded
 o = 'eva_data.csv'
 
-# TODO: Unused function - candidate for removal
+# TODO: Unused variable - candidate for removal
 fieldnames = ("EVA #", "Country", "Crew    ", "Vehicle", "Date", "Duration", "Purpose")
 
 print("--START--")
