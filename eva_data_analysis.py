@@ -37,6 +37,7 @@ subset['duration_hours'] = hrs
 subset = subset.drop('duration', axis=1)
 subset = subset.groupby('crew').sum()
 
+# TODO Inputs: this should be a command-line argument, not hardcoded
 dur_out = 'duration_by_astronaut.csv'
 print(f'Saving to CSV file {dur_out}')
 subset.to_csv(dur_out, index=False, encoding='utf-8')
@@ -55,7 +56,8 @@ d['cumulative_time'] = d['duration_hours'].cumsum()
 # TODO: Import statements should be grouped at the top
 import matplotlib.pyplot as plt
 
-# TODO Inputs: graph save location could be a flexible command-line argument
+# TODO Naming: 'g' is not descriptive
+# TODO Inputs: graph save location should be a command-line argument, not hardcoded
 g = 'cumulative_eva_graph.png'
 print(f'Plotting cumulative spacewalk duration and saving to {g}')
 plt.plot(d['date'], d['cumulative_time'], 'ko-')
