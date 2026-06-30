@@ -8,15 +8,15 @@ f = 'eva_data.json'
 o = 'eva_data.csv'
 
 # TODO: Unused variable - candidate for removal
-fieldnames = ("EVA #", "Country", "Crew ", "Vehicle", "Date", "Duration", "Purpose")
+fieldnames = ("EVA number", "Country", "Crew", "Vehicle", "Date", "Duration", "Purpose")
 
 print("--START--")
 
 print(f'Reading JSON data file {f}')
 # TODO Naming: 'd' is not descriptive
 d = pd.read_json(f, convert_dates=['date'], encoding='ascii')
-d['eva'] = d['eva'].astype(float)  # Not necessary, already read as float?
-d.dropna(axis=0, subset=['duration', 'date'], inplace=True)  # drop rows where either duration or date in null
+d['eva'] = d['eva'].astype(float)
+d.dropna(axis=0, subset=['duration', 'date'], inplace=True)  # drop rows where either duration or date is null
 
 print(f'Saving data to CSV file {o}')
 d.to_csv(o, index=False, encoding='utf-8')
