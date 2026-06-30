@@ -40,7 +40,7 @@ subset = subset.groupby('crew').sum()
 # TODO Inputs: this should be a command-line argument, not hardcoded
 dur_out = 'duration_by_astronaut.csv'
 print(f'Saving to CSV file {dur_out}')
-subset.to_csv(dur_out, index=False, encoding='utf-8')
+subset.to_csv(dur_out, index=True, encoding='utf-8')
 
 d.sort_values('date', inplace=True)
 
