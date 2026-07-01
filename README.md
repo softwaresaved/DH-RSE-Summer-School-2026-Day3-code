@@ -5,6 +5,8 @@
 >
 >Throughout the session, attendees will learn and apply better research software practices — including elements of FAIR — as they work to improve the software project.
 >
+> The improved version of the code is on a separate [`final` branch](https://github.com/softwaresaved/DH-RSE-Summer-School-2026-Day3-code/blob/main/README.md).
+>
 > The code has been tested with Python `3.14.2`.
 
 > [!NOTE]
