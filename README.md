@@ -9,7 +9,7 @@
 
 > [!NOTE]
 > ## Licence
-> The work in this folder is copyrighted by the Software Sustainability Institute (Copyright (c) 2026 The Software Sustainability Institute) and licensed under the MIT License.
+> The work in this folder is copyrighted by the Software Sustainability Institute and licensed under the MIT License.
 > We did not include LICENSE file in this repository as this is a template repo and people copying from it need to decide what licence they want to share their work under as part of exercises they use this repository for.
 
 # Your Project Name
