@@ -31,6 +31,7 @@ subset = subset.explode('crew') # expand entries in a list-like column across mu
 hrs = []
 # Create a list of decimal values for duration in hours
 for val in subset['duration']:
+    # TODO Naming: 'val', 'h', 'm' could have more descriptive names
     h, m = val.split(":")
     hrs.append(int(h) + int(m) / 60)
 subset['duration_hours'] = hrs
